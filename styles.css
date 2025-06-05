@@ -1,0 +1,48 @@
+/* styles.css */
+.hidden-by-extension {
+  display: none !important;
+  /* You could also add other styles, like a small border for debugging */
+  /* border: 1px solid red !important; */
+  /* height: 10px !important; */
+  /* overflow: hidden !important; */
+}
+
+.reddit-filter-button {
+  background-color: #878a8c !important;
+  color: white !important;
+  border: none !important;
+  padding: 2px 6px !important;
+  font-size: 10px !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+  margin: 0 !important;
+  display: block !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  transition: background-color 0.2s ease !important;
+  z-index: 999999 !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  min-width: auto !important;
+  white-space: nowrap !important;
+}
+
+.reddit-filter-button:hover {
+  background-color: #6a6d70 !important;
+  color: white !important;
+}
+
+.reddit-filter-button:active {
+  background-color: #5a5d60 !important;
+}
+
+.reddit-filter-button.filtered {
+  background-color: #46d160 !important;
+}
+
+.reddit-filter-button.filtered:hover {
+  background-color: #3bb54a !important;
+}

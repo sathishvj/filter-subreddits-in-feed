@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Feed Subreddit Filter",
+  "version": "1.1", // Increment version
+  "description": "Hides content from specified subreddits within Reddit feeds.",
+  "permissions": [
+    "storage",    // To store the list of blocked subreddits
+    "scripting"   // Required for programmatic injection in Manifest V3 (though content_scripts in manifest is fine too)
+    // "activeTab" is not strictly needed if you only rely on content_scripts matching patterns
+  ],
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"], // This targets all Reddit pages
+      "js": ["content.js"],
+      "css": ["styles.css"], // Optional CSS for hiding
+      "run_at": "document_idle" // Run after the page has mostly loaded
+    }
+  ]
+}
